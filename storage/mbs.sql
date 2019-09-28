@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2019 at 07:23 PM
+-- Generation Time: Sep 28, 2019 at 09:00 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.2.21
 
@@ -46,7 +46,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`account_id`, `account_number`, `account_type`, `personal_code`, `current_balance`, `currency`, `user_id`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 2107351569659488, 'GENERAL', '245875126', 44.425, 'euro', 3, 1, '2019-09-28 17:12:41', '2019-09-28 17:12:41');
+(1, 2107351569659488, 'GENERAL', '245875126', 3.8, 'euro', 3, 1, '2019-09-28 18:59:27', '2019-09-28 18:59:27');
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,10 @@ INSERT INTO `ac_ledger` (`ledger_id`, `account_id`, `trid`, `trcode`, `cr_amount
 (3, 2107351569659488, 2, 1, 0, 39.3, 1, 3, '2019-09-28 10:40:56', '2019-09-28 16:40:56'),
 (4, 2107351569659488, 2, 3, 0.7, 0, 1, 3, '2019-09-28 10:40:56', '2019-09-28 16:40:56'),
 (5, 2107351569659488, 3, 2, 22, 0, 1, 3, '2019-09-28 11:12:18', '2019-09-28 17:12:18'),
-(6, 2107351569659488, 4, 2, 22, 0, 1, 3, '2019-09-28 11:12:41', '2019-09-28 17:12:41');
+(6, 2107351569659488, 4, 2, 22, 0, 1, 3, '2019-09-28 11:12:41', '2019-09-28 17:12:41'),
+(7, 2107351569659488, 5, 2, 15, 0, 1, 3, '2019-09-28 12:45:34', '2019-09-28 18:45:34'),
+(8, 2107351569659488, 6, 2, 0, 24.375, 1, 3, '2019-09-28 12:59:27', '2019-09-28 18:59:27'),
+(9, 2107351569659488, 6, 3, 0.625, 0, 1, 3, '2019-09-28 12:59:27', '2019-09-28 18:59:27');
 
 -- --------------------------------------------------------
 
@@ -185,7 +188,9 @@ INSERT INTO `transaction` (`trid`, `account_id`, `amount`, `currency`, `trcode`,
 (1, 2107351569659488, 50, 'euro', 1, '2019-09-28 16:39:07', 12334, 'master', NULL, 3, NULL, 3, '2019-09-28 10:39:07', '2019-09-28 16:39:07'),
 (2, 2107351569659488, 40, 'euro', 1, '2019-09-28 16:40:56', 2121212, 'master', NULL, 3, NULL, 3, '2019-09-28 10:40:56', '2019-09-28 16:40:56'),
 (3, 2107351569659488, 22, 'euro', 2, '2019-09-28 17:12:18', NULL, NULL, 2323, 3, 'test', 3, '2019-09-28 11:12:18', '2019-09-28 17:12:18'),
-(4, 2107351569659488, 22, 'euro', 2, '2019-09-28 17:12:41', NULL, NULL, 2323, 3, 'test', 3, '2019-09-28 11:12:41', '2019-09-28 17:12:41');
+(4, 2107351569659488, 22, 'euro', 2, '2019-09-28 17:12:41', NULL, NULL, 2323, 3, 'test', 3, '2019-09-28 11:12:41', '2019-09-28 17:12:41'),
+(5, 2107351569659488, 15, 'euro', 2, '2019-09-28 18:45:34', NULL, NULL, 2323, 3, 'Test', 3, '2019-09-28 12:45:34', '2019-09-28 18:45:34'),
+(6, 2107351569659488, 25, 'euro', 2, '2019-09-28 18:59:27', NULL, NULL, 3434, 3, NULL, 3, '2019-09-28 12:59:27', '2019-09-28 18:59:27');
 
 -- --------------------------------------------------------
 
@@ -234,7 +239,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `remember_token`, `is_active`, `created_at`, `updated_at`) VALUES
 (1, 'Abdul', 'Awal', 'awal.ashu@gmail.com', '$2y$10$r/H3FvaZiWnGtUNwxCTbTuugcHtJCoqYXyZe2FLJJkq8D93kkm8xG', 'TXJwfUjoZMwpFXKMrczLBsJkzYktRucw7vA6Xw6ZZMROx64PnM6pNM2UuT2x', 1, NULL, '2019-09-27 12:10:44'),
-(3, 'Ashraf', 'Ahmed', 'ashraf@gmail.com', '$2y$10$.VYoyupk9KB8qDSE1fuKfe7XHm.P8f/xdIEuq1r.7UfsCV1nEvVV2', 'Ko94gUzvRLY12AWmYWMqTRx7WjeTsP6h0o2PzKK8Amubc0l39OY4U4h1GrTl', 1, '2019-09-28 02:31:28', '2019-09-28 02:31:28');
+(3, 'Ashraf', 'Ahmed', 'ashraf@gmail.com', '$2y$10$.VYoyupk9KB8qDSE1fuKfe7XHm.P8f/xdIEuq1r.7UfsCV1nEvVV2', '7enl7cDya6xMvgJgn9R9unJpm074WEBhc48ltkzQOcX828NIdkrICqOp2lp9', 1, '2019-09-28 02:31:28', '2019-09-28 02:31:28');
 
 --
 -- Indexes for dumped tables
@@ -309,7 +314,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `ac_ledger`
 --
 ALTER TABLE `ac_ledger`
-  MODIFY `ledger_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ledger_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ac_vaucher`
@@ -333,7 +338,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `trid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `trid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaction_code`

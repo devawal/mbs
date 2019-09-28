@@ -30,7 +30,7 @@
 		    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body class="hold-transition layout-boxed skin-purple sidebar-mini">
+	<body class="hold-transition skin-purple sidebar-mini">
 		
 		<div class="wrapper">
 			<!--==========Header=======-->

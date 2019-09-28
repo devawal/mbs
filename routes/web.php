@@ -38,8 +38,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'account'], function () {
     Route::post('post-deposit', array("as" => "post_deposit", 'uses' => 'Admin_access\AccountController@postDeposit'));
 
     Route::get('get-balance', array("as" => "get_balance", 'uses' => 'Admin_access\AccountController@getBalance'));
+
     Route::get('fund-transfer', array("as" => "fund_transfer", 'uses' => 'Admin_access\AccountController@fundTransfer'));
     Route::post('post-transfer', array("as" => "post_transfer", 'uses' => 'Admin_access\AccountController@postTransfer'));
+
+    Route::get('fund-withdraw', array("as" => "fund_withdraw", 'uses' => 'Admin_access\AccountController@fundWithdraw'));
+    Route::post('post-withdraw', array("as" => "post_withdraw", 'uses' => 'Admin_access\AccountController@postWithdraw'));
 
     // Logout active session
     Route::get('get-logout', array("as" => "get_logout", 'uses' => 'Auth\LoginController@getLogout'));

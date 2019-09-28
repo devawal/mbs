@@ -22,13 +22,16 @@
 				<a href="{{ route('user_dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
 			</li>
 			<li <?php if( isset($title) && $title == 'User prifile' ) echo 'class="active"'; ?> >
-				<a href="{{ route('user_profile') }}"><i class="fa fa-dashboard"></i> <span>Prifile</span></a>
+				<a href="{{ route('user_profile') }}"><i class="fa fa-user"></i> <span>Prifile</span></a>
 			</li>
 			<li <?php if( isset($title) && $title == 'Deposit money' ) echo 'class="active"'; ?> >
-				<a href="{{ route('deposit') }}"><i class="fa fa-dashboard"></i> <span>Deposit</span></a>
+				<a href="{{ route('deposit') }}"><i class="fa fa-money"></i> <span>Deposit</span></a>
 			</li>
 			<li <?php if( isset($title) && $title == 'Fund Transfer' ) echo 'class="active"'; ?> >
-				<a href="{{ route('fund_transfer') }}"><i class="fa fa-dashboard"></i> <span>Fund Transfer</span></a>
+				<a href="{{ route('fund_transfer') }}"><i class="fa fa-exchange"></i> <span>Fund Transfer</span></a>
+			</li>
+			<li <?php if( isset($title) && $title == 'Fund Withdraw' ) echo 'class="active"'; ?> >
+				<a href="{{ route('fund_withdraw') }}"><i class="fa fa-university"></i> <span>Fund Withdraw</span></a>
 			</li>
 		</ul>
 	</section>

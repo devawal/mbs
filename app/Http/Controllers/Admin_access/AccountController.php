@@ -98,7 +98,7 @@ class AccountController extends Controller
             'remerks'       => 'required',
         ]);
         
-        $data = $request->all(); //echo '<pre>';print_r($data);exit;
+        $data = $request->all();
         $tran = Transaction::transferMoney($data);
         if ($tran) {
             Session::flash('success', 'Transfer successfully');
@@ -109,4 +109,35 @@ class AccountController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Show the fund withdraw page.
+     *
+     * @return Response
+     */
+    public function fundWithdraw()
+    {
+        $title = "Fund Withdraw";
+        $account = Account::where('user_id', Auth::user()->id)->first();
+        
+        return view('admin_access.fund_withdraw.index', compact('title', 'account'));
+    }
+
+    /**
+     * Post account fund withdraw
+     *
+     * @param Request $request
+     * @return response
+     */
+    public function postWithdraw(Request $request)
+    {
+        $data = $request->all();
+        $tran = Transaction::withdrawMoney($data);
+
+        if ($tran) {
+            Session::flash('success', 'Fund withdraw successfully');
+            return redirect()->back();
+        }
+        Session::flash('error', 'Something went wrong, please try again later!');
+        return redirect()->back();
+    }
 }

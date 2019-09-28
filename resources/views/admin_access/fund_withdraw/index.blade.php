@@ -34,9 +34,13 @@
             $(document.body).on('blur', '#amount', function(event) {
             	var amount = $(this).val();
             	var balance = $('#available').val();
-            	if (amount != '' && amount > balance) {
-            		$(this).val('');
-            		alert('Account balance exceed!');
+            	if (amount != '') {
+            		var service_charge = (parseInt(amount)*2.5)/100;
+            		amount = parseInt(amount) + service_charge;
+            		if (amount > balance) {
+            			$(this).val('');
+	            		alert('Account balance exceed!');
+            		}
             	}
             });
         });
@@ -47,7 +51,7 @@
 @section('content')
 
 	<section class="content-header">
-		<h1>Transfer money</h1>
+		<h1>Fund withdraw</h1>
 		<div class="row">
 			<div class="col-md-5 col-sm-6 col-xs-12">
 
@@ -85,9 +89,9 @@
 				
 				<div class="row">
 					<div class="col-md-8">
-						<h4>Transfer money within MBS</h4><br>
+						<h4>Fund withdrawal using bank</h4><br>
 
-						{!! Form::open(array('route' => array('post_transfer'), 'method' => 'post', 'id'=>'fund_transfer_form', 'class' =>'form-horizontal')) !!}
+						{!! Form::open(array('route' => array('post_withdraw'), 'method' => 'post', 'id'=>'fund_withdraw', 'class' =>'form-horizontal')) !!}
 							<div class="form-group form-error">
 								{!! Form::label('from_account', 'From account', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
 								<div class="col-md-8 col-sm-8 col-xs-12">
@@ -110,15 +114,21 @@
 								</div>
 							</div>
 							<div class="form-group form-error">
-								{!! Form::label('to_account', 'To account', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
+								{!! Form::label('to_account', 'Withdrawal account', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
 								<div class="col-md-8 col-sm-8 col-xs-12">
-									<input type="number" name="to_account" id="to_account" class="form-control" required="" placeholder="To account">
+									<input type="number" name="to_account" id="to_account"  class="form-control" required="" placeholder="Withdrawal account">
 								</div>
 							</div>
 							<div class="form-group form-error">
-								{!! Form::label('amount', 'Transfer Amount', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
+								{!! Form::label('amount', 'Withdrawal Amount', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
 								<div class="col-md-8 col-sm-8 col-xs-12">
-									<input type="number" name="amount" id="amount" class="form-control" min="10" max="100" required="" placeholder="Transfer Amount">
+									<input type="number" name="amount" id="amount" class="form-control" min="10" max="100" required="" placeholder="Withdrawal amount">
+								</div>
+							</div>
+							<div class="form-group form-error">
+								{!! Form::label('service_charge', 'Service charge%', array('class' => 'col-md-4 col-sm-4 col-xs-12 control-label')) !!}
+								<div class="col-md-8 col-sm-8 col-xs-12">
+									<input type="number" name="service_charge" id="service_charge" class="form-control" readonly="" value="2.5" placeholder="Service charge">
 								</div>
 							</div>
 							<div class="form-group form-error">
@@ -129,7 +139,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-4 col-sm-8">
-									<button type="submit" class="btn btn-success">Transfer</button>
+									<button type="submit" class="btn btn-success">Withdraw</button>
 								</div>
 							</div>
 						{!! Form::close() !!}
@@ -137,8 +147,8 @@
 					<div class="col-md-4">
 						<h4>Notes</h4>
 						<ul>
-							<li>This is a test fund transfer, actual transfer require more steps than current.</li>
-							<li>Transfer is currently limited to MBS only.</li>
+							<li>This is a test fund withdraw, actual withdraw require more steps than current.</li>
+							<li>Transfer is currently possible only bank.</li>
 						</ul>
 					</div>
 				</div>
