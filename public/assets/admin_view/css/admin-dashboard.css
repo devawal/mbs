@@ -1,0 +1,74 @@
+/**
+ * Site name
+ * Author: Abdul Awal
+ * Email: abdulawal200@gmail.com
+ * Website: http://awalonline.com
+ */
+
+/**
+ * Alert
+ */
+.alert{
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+ /**
+ * End of alert
+ */
+
+/**
+ * Portlets
+ */
+.portlet-box{
+	display: block;
+	width: 100%;
+	float: left;
+	border: 1px solid #35aa47;
+	border-top: 0px;
+	margin-bottom: 15px;
+}
+.portlet-box.warning{
+	border: 1px solid #e08e0b;
+}
+.portlet-box.warning .portlet-title{
+	background-color: #f39c12;
+}
+.portlet-box.purple{
+	border: 1px solid #af5cc1;
+}
+.portlet-box.purple .portlet-title{
+	background-color: #852b99;
+}
+.portlet-box .portlet-title{
+	width: 100%;
+	background-color: #35aa47;
+	padding: 5px;
+	float: left;
+}
+.portlet-box .caption{
+	display: inline-block;
+	font-size: 16px;
+	color: #FFFFFF;
+	padding-top: 5px;
+	float: left;
+}
+.portlet-box .actions{
+	display: inline-block;
+	float: right;
+}
+.portlet-body{
+	padding: 10px;
+}
+/**
+ * Portlets end
+ */
+
+.btn{
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.content-header>h1{
+    margin-bottom: 15px;
+}

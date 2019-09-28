@@ -1,0 +1,31 @@
+#account_info .row{
+	margin-bottom: 14px;
+}
+.help-block{
+	color: red;
+}
+.home_thumb{
+    height: 245px;
+    width: 100%;
+    float: left;
+}
+.thumb_img_box{
+    width: 150px;
+    min-height: 100px;
+    position: relative;
+    border: 1px solid #b6b6b6;
+    float: left;
+}
+.thumb_img_box button.btn{
+    position: absolute;
+    bottom: -35px;
+}
+.thumb_img_box button.fileclick{
+    border-radius: 0px;
+    left: 0px;
+}
+.thumb_img_box button.hide_comimg{
+    border-radius: 0px;
+    left: auto;
+    right: 0px;
+}
